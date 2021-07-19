@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="#" th:action=@{./productPurchased} th:object="${command}">
+	Enter Customer E-Mail :<input type="text" th:field="*{customerEmail}"><br><br>
+	Enter Customer Address :<input type="text" th:field="*{customerAddress}"><br><br>
+	<input type="submit" value="Save">
+</form>
+</body>
+</html>

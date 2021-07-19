@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Your Order Has Been Placed Successfully!!!!</h1>
+	<h3>Bill Details :</h3>
+	<br>
+	<br>
+	<table border="1">
+		<tr>
+			<th>Customer E-Mail</th>
+			<th>Customer Address</th>
+		</tr>
+
+		<tr>
+			<td th:text="${billDetails.order.customerEmail}"></td>
+			<td th:text="${billDetails.order.customerAddress}"></td>
+		</tr>
+	</table>
+	<br>
+	<br>
+	<table border="1">
+		<tr>
+			<th>Product ID</th>
+			<th>Product Name</th>
+			<th>Product Quantity</th>
+			<th>Product Price</th>
+		</tr>
+
+		<tr th:each="item : ${billDetails.shopping}">
+			<td th:text="${item.id}"></td>
+			<td th:text="${item.name}"></td>
+			<td th:text="${item.quantityAvailable}"></td>
+			<td th:text="${item.price}"></td>
+		</tr>
+		<tr>
+			<td colspan="3">Total Amount :</td>
+			<td th:text="${billDetails.totalAmount}"></td>
+		</tr>
+	</table>
+	<br>
+	<br>
+	<!--  -->
+	<br>
+	<br>
+	<a href="./">Go to Main Page</a>
+</body>
+</html>

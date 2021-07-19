@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Cart details</h1>
+	<table border="1">
+		<tr>
+			<th>Product ID</th>
+			<th>Product Name</th>
+			<th>Product Quantity</th>
+			<th>Product Price</th>
+		</tr>
+	
+		<tr th:each="shopping : ${cartList}">
+			<td th:text="${shopping.id}"></td>
+			<td th:text="${shopping.name}"></td>
+			<td th:text="${shopping.quantityAvailable}"></td>
+			<td th:text="${shopping.price}"></td>
+		</tr>
+	</table>
+<br><br>
+<form action="#" th:action=@{./buyProduct}>
+<input type="submit" value="Purchase" name="operation">
+</form>
+<br><br>
+<a href="./">Cancel</a>
+</body>
+</html>

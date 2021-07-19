@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="#" th:action=@{./saveProduct} th:object="${command}">
+Select Product ID : <select th:field="*{Id}">
+<option value="">Select Product Name</option>
+<option th:each="product : ${products}" th:value="${product.id}" th:text="${product.name}"></option>
+</select><br><br>
+Enter Quantity<input type="number" min="1"  th:field="*{quantityAvailable}">
+<br><br>
+<input type="submit" value="Add More" name="operation">
+<input type="submit" value="Save" name="operation">
+</form>
+</body>
+</html>
